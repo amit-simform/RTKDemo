@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Home Screen",
+    "details": "Details",
+    "signIn": "SignIn",
+    "lightTheme": "light theme",
+    "darkTheme": "dark theme"
+  },
+  "details": {
+    "title": "Details Screen"
+  },
+  "apiError": {
+    "clientError": "Client can not provided proper data.",
+    "serverError": "Server side error.",
+    "timeoutError": "Server didn't respond in time.",
+    "connectionError": "Server not available, bad dns.",
+    "networkError": "No internet connection, Please try again after sometime.",
+    "cancelError": "Request has been cancelled. Only possible if `cancelToken` is provided in config, see axios `Cancellation`.",
+    "somethingWentWrong": "Something went wrong. Try again!",
+    "unexpectedError": "An unexpected error occurred.",
+    "cancelSagaError": "Request has been cancelled"
+  },
+  "yupError": {
+    "requireEmailError": "Please enter email address",
+    "invalidEmailError": "Please enter valid email address",
+    "requirePasswordError": "Please enter password",
+    "lengthPasswordError": "Must be 8 characters or more",
+    "lowercasePasswordError": "One lowercase character",
+    "uppercasePasswordError": "One uppercase character",
+    "specialPasswordError": "One special character",
+    "digitPasswordError": "One number"
+  },
+  "auth": {
+    "hintEmail": "Email",
+    "hintPassword": "Password",
+    "btnSignIn": "Sign In"
+  }
+}
