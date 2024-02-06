@@ -26,7 +26,7 @@ export const manualIncrement = createAction<number>('increment/manual');
 export const incrementAsync = createAsyncThunk(
   'incrementAsync',
   async (amount: number, { rejectWithValue }) => {
-    // this is just for example purposes - will reject sometimes :)
+    // this is just for example purposes, to reject the operation sometimes
     if (Math.random() < 0.25) {
       return rejectWithValue({ error: 'Random math error!' });
     }
@@ -38,7 +38,7 @@ export const incrementAsync = createAsyncThunk(
 );
 
 export const anotherAsyncThunk = createAsyncThunk('anotherAsyncThunk', async () => {
-  return 'Hi!';
+  return 'This is a independent different async thunk';
 });
 
 export const counterSlice = createSlice({

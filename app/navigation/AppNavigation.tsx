@@ -67,8 +67,8 @@ const AppContainer = () => {
       }}
     >
       <RootStack.Navigator>
-        {/* <RootStack.Screen name={ROUTES.Home} component={HomeScreen} /> */}
-        <RootStack.Screen name={ROUTES.Details} component={DetailsScreen} />
+        <RootStack.Screen name={ROUTES.Home} component={HomeScreen} />
+        {/* <RootStack.Screen name={ROUTES.Details} component={DetailsScreen} /> */}
       </RootStack.Navigator>
     </NavigationContainer>
   );

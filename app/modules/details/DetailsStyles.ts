@@ -9,6 +9,7 @@ import { Colors, type ThemeMode } from '../../theme';
  */
 const styles = (theme: ThemeMode) =>
   StyleSheet.create({
+    mainView:{ flex: 1, marginHorizontal: 16, justifyContent: 'center' },
     addButton: {
       backgroundColor: '#2ecc71'
     },
@@ -42,15 +43,15 @@ const styles = (theme: ThemeMode) =>
     row: {
       alignItems: 'center',
       flexDirection: 'row',
-      justifyContent: 'center',
-      marginHorizontal: 16
+      justifyContent: 'center'
     },
     textbox: {
+      alignSelf: 'center',
       borderWidth: 1,
-      fontSize: 24,
-      marginRight: 8,
-      padding: 20,
-      textAlign: 'center'
+      fontSize: 30,
+      padding: 15,
+      textAlign: 'center',
+      width: '50%'
     },
     value: {
       fontFamily: 'Courier New',

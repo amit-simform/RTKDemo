@@ -71,7 +71,6 @@ const store = configureStore({
  * @returns None
  */
 export const persistor = persistStore(store);
-console.log(store.getState().users, 'usersinstore');
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootStateType = ReturnType<typeof store.getState>;

@@ -43,7 +43,7 @@ const UserListComponent: React.FC = () => {
 
     dispatch(addUser({ id: 4, name: 'Jacob', age: 35 }));
 
-    dispatch(removeUser(2));
+    // dispatch(removeUser(2));
 
     dispatch(
       updateUser({
@@ -52,7 +52,7 @@ const UserListComponent: React.FC = () => {
       })
     );
 
-    dispatch(removerUserByIds([1, 4]));
+    // dispatch(removerUserByIds([1, 4]));
 
     dispatch(
       updateUserByIds([
@@ -70,23 +70,23 @@ const UserListComponent: React.FC = () => {
       ])
     );
 
-    dispatch(
-      setAll([
-        { id: 8, name: 'Henry', age: 28 },
-        { id: 9, name: 'Isabel', age: 35 }
-      ])
-    );
+    // dispatch(
+    //   setAll([
+    //     { id: 8, name: 'Henry', age: 28 },
+    //     { id: 9, name: 'Isabel', age: 35 }
+    //   ])
+    // );
 
-    dispatch(removeAll());
+    // dispatch(removeAll());
 
-    dispatch(upsertUser({ id: 10, name: 'Jack', age: 30 }));
+    // dispatch(upsertUser({ id: 10, name: 'Jack', age: 30 }));
 
-    dispatch(
-      upsertMany([
-        { id: 11, name: 'Kate', age: 25 },
-        { id: 12, name: 'Leo', age: 28 }
-      ])
-    );
+    // dispatch(
+    //   upsertMany([
+    //     { id: 11, name: 'Kate', age: 25 },
+    //     { id: 12, name: 'Leo', age: 28 }
+    //   ])
+    // );
   }, [dispatch]);
 
   return (

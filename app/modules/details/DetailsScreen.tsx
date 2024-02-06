@@ -24,7 +24,7 @@ const Counter: React.FC = () => {
   const [incrementAmount, setIncrementAmount] = useState<string>('2');
 
   return (
-    <View style={{ marginHorizontal: 16 }}>
+    <View style={styles.mainView}>
       <View style={styles.row}>
         <Button
           title="+"
@@ -43,18 +43,16 @@ const Counter: React.FC = () => {
         style={styles.textbox}
         value={incrementAmount}
         keyboardType="numeric"
-        placeholder="Set increment amount"
+        placeholder="Set Amount"
         onChangeText={(text) => setIncrementAmount(text)}
       />
       <View style={styles.row}>
         <Button
           title="Add Amount"
-          // style={styles.button}
           onPress={() => dispatch(manualIncrement(Number(incrementAmount) || 0))}
         />
         <Button
-          title="Add Async"
-          // style={styles.asyncButton}
+          title="Add Default"
           onPress={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
         />
       </View>

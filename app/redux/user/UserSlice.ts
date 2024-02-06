@@ -14,15 +14,12 @@ interface User {
 }
 
 type RootStateType = ReturnType<typeof userSlice.reducer>;
-// Define the entity adapter
-// const usersAdapter = createEntityAdapter<User>({ selectId: (user) => user.id });
+
+//define the entityAdapter
 const usersAdapter = createEntityAdapter<User>({
+  // sortComparer: (a, b) => a.name.localeCompare(b.name),
   selectId: (user) => user?.id
 });
-
-// Define the user state using the adapter's EntityState
-// interface UserState extends EntityState<User> {
-// }
 
 const initialState = usersAdapter.getInitialState({
   // Additional properties can be initialized here
@@ -30,13 +27,12 @@ const initialState = usersAdapter.getInitialState({
   error: null
 });
 
-//the modified initialState
-//initailState {"entities": {}, "error": null, "ids":[], loading:false}
+//the unchanged initialState
+//initailState {"entities": {}, "ids":[]}
 
 const userSlice = createSlice({
   name: 'users',
   initialState,
-  // initialState: usersAdapter.getInitialState(),
   reducers: {
     addUser: usersAdapter.addOne,
     addMany: usersAdapter.addMany,
@@ -64,7 +60,7 @@ export const {
   selectTotal: selectUserTotal
 } = usersAdapter.getSelectors((state: RootStateType) => state.users);
 
-// Export actions and reducer
+// export actions
 export const {
   addUser,
   addMany,
@@ -79,4 +75,5 @@ export const {
   upsertUser,
   upsertMany
 } = userSlice.actions;
+
 export const UserReducer = userSlice.reducer;
