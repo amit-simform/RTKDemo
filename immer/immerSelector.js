@@ -1,6 +1,7 @@
 /* eslint-disable require-jsdoc */
-/* eslint-disable import/no-extraneous-dependencies */
+
 /* eslint-disable no-restricted-syntax */
+
 import { createDraftSafeSelector, createSelector } from '@reduxjs/toolkit';
 import { produce } from 'immer';
 
@@ -15,7 +16,6 @@ let normalState = { value: 1 };
 console.log('unsafeSelctor1', createSelectorValue(normalState));
 console.log('draftSafeSelector1', draftSafeSelectorValue(normalState));
 
-// normalState = { value: 2 };
 normalState.value = 2;
 console.log('unsafeSelctor2', createSelectorValue(normalState));
 console.log('draftSafeSelector2', draftSafeSelectorValue(normalState));
@@ -30,7 +30,6 @@ produce({ value: 1 }, (state) => {
   console.log('immerDraftSafeSelectorValue', immerDraftSafeSelectorValue(state));
 
   state.value = 2;
-  // state = { value: 2 };
   console.log('immerCreateSelectorValue', immerCreateSelectorValue(state));
   console.log('immerDraftSafeSelectorValue', immerDraftSafeSelectorValue(state));
 });

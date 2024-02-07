@@ -33,10 +33,10 @@ const styles = (theme: ThemeMode) =>
     userContainer: {
       backgroundColor: '#fff',
       borderRadius: 8,
-      padding: 16,
+      elevation: 4,
       marginBottom: 16,
-      elevation: 4, // Android shadow
-      shadowColor: '#000', // iOS shadow
+      padding: 16,
+      shadowColor: '#000',
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2,
       shadowRadius: 4

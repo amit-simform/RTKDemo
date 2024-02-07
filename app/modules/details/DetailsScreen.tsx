@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTheme } from '../../hooks';
 import {
@@ -27,15 +27,15 @@ const Counter: React.FC = () => {
     <View style={styles.mainView}>
       <View style={styles.row}>
         <Button
-          title="+"
-          accessibilityLabel="Increment value"
-          onPress={() => dispatch(manualIncrement(1))}
-        />
-        <Text style={styles.value}>{count}</Text>
-        <Button
           title="-"
           accessibilityLabel="Decrement value"
           onPress={() => dispatch(decrement())}
+        />
+        <Text style={styles.value}>{count}</Text>
+        <Button
+          title="+"
+          accessibilityLabel="Increment value"
+          onPress={() => dispatch(manualIncrement(1))}
         />
       </View>
 

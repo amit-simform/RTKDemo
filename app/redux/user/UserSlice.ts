@@ -1,10 +1,5 @@
 // userSlice.ts
-import {
-  createSlice,
-  createEntityAdapter,
-  type EntityState,
-  type PayloadAction
-} from '@reduxjs/toolkit';
+import { createSlice, createEntityAdapter, type EntityId } from '@reduxjs/toolkit';
 
 // Define the user entity type
 interface User {
@@ -17,8 +12,8 @@ type RootStateType = ReturnType<typeof userSlice.reducer>;
 
 //define the entityAdapter
 const usersAdapter = createEntityAdapter<User>({
-  // sortComparer: (a, b) => a.name.localeCompare(b.name),
-  selectId: (user) => user?.id
+  // sortComparer: (a, b) => a.name.localeCompare(b.name)
+  selectId: (user: { id: EntityId }) => user?.id
 });
 
 const initialState = usersAdapter.getInitialState({
@@ -52,6 +47,7 @@ const userSlice = createSlice({
 });
 
 // Selectors for accessing user entities and initial state
+// these selectors get craeted using createSelector function only
 export const {
   selectById: selectUserById,
   selectIds: selectUserIds,

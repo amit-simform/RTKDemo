@@ -1,3 +1,6 @@
+/* eslint-disable require-jsdoc */
+/* eslint-disable no-restricted-syntax */
+
 import {
   createSlice,
   type PayloadAction,
@@ -28,6 +31,7 @@ export const incrementAsync = createAsyncThunk(
   async (amount: number, { rejectWithValue }) => {
     // this is just for example purposes, to reject the operation sometimes
     if (Math.random() < 0.25) {
+      console.log('Action Got Rejected');
       return rejectWithValue({ error: 'Random math error!' });
     }
 

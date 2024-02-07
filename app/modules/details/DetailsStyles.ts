@@ -9,7 +9,6 @@ import { Colors, type ThemeMode } from '../../theme';
  */
 const styles = (theme: ThemeMode) =>
   StyleSheet.create({
-    mainView:{ flex: 1, marginHorizontal: 16, justifyContent: 'center' },
     addButton: {
       backgroundColor: '#2ecc71'
     },
@@ -40,10 +39,11 @@ const styles = (theme: ThemeMode) =>
       paddingRight: 12,
       transition: 'all 0.15s'
     },
+    mainView: { flex: 1, justifyContent: 'center', marginHorizontal: 16 },
     row: {
       alignItems: 'center',
       flexDirection: 'row',
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
     textbox: {
       alignSelf: 'center',

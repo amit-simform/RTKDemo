@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
-// UserListComponent.tsx
+
 import React, { useEffect } from 'react';
-import { View, Text, ScrollView, Button } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTheme } from '../../hooks';
 import {
@@ -24,7 +24,6 @@ import {
   selectUserTotal
 } from '../../redux/user/UserSlice';
 import styleSheet from './HomeStyles';
-// import { selectAllUsers, setMany, RootState } from './userSlice';
 
 const UserListComponent: React.FC = () => {
   const { styles } = useTheme(styleSheet);
@@ -33,6 +32,7 @@ const UserListComponent: React.FC = () => {
 
   useEffect(() => {
     // Dispatch actions to update user data in the store
+
     dispatch(
       addMany([
         { id: 1, name: 'John', age: 25 },
@@ -43,7 +43,7 @@ const UserListComponent: React.FC = () => {
 
     dispatch(addUser({ id: 4, name: 'Jacob', age: 35 }));
 
-    // dispatch(removeUser(2));
+    dispatch(removeUser(2));
 
     dispatch(
       updateUser({
@@ -52,23 +52,23 @@ const UserListComponent: React.FC = () => {
       })
     );
 
-    // dispatch(removerUserByIds([1, 4]));
+    dispatch(removerUserByIds([1, 2]));
 
-    dispatch(
-      updateUserByIds([
-        { id: 2, changes: { name: 'Updated Alice', age: 31 } },
-        { id: 3, changes: { name: 'Updated Bob Again', age: 30 } }
-      ])
-    );
+    // dispatch(
+    //   updateUserByIds([
+    //     { id: 2, changes: { name: 'Updated Alice', age: 31 } },
+    //     { id: 3, changes: { name: 'Updated Bob Again', age: 30 } }
+    //   ])
+    // );
 
-    dispatch(setOne({ id: 5, name: 'Eva', age: 24 }));
+    // dispatch(setOne({ id: 5, name: 'Eva', age: 24 }));
 
-    dispatch(
-      setMany([
-        { id: 6, name: 'Frank', age: 27 },
-        { id: 7, name: 'Grace', age: 32 }
-      ])
-    );
+    // dispatch(
+    //   setMany([
+    //     { id: 6, name: 'Frank', age: 27 },
+    //     { id: 7, name: 'Grace', age: 32 }
+    //   ])
+    // );
 
     // dispatch(
     //   setAll([
@@ -79,7 +79,7 @@ const UserListComponent: React.FC = () => {
 
     // dispatch(removeAll());
 
-    // dispatch(upsertUser({ id: 10, name: 'Jack', age: 30 }));
+    // dispatch(upsertUser({ id: 1, name: 'Jack', age: 30 }));
 
     // dispatch(
     //   upsertMany([
@@ -110,18 +110,6 @@ const UserListComponent: React.FC = () => {
           </View>
         ))}
       </ScrollView>
-      {/* <Button title="Add User" onPress={handleAddUser} />
-      <Button title="Add Many" onPress={handleAddMany} />
-      <Button title="Remove User" onPress={handleRemoveUser} />
-      <Button title="Update User" onPress={handleUpdateUser} />
-      <Button title="Remove Users by IDs" onPress={handleRemoveUserByIds} />
-      <Button title="Update Users by IDs" onPress={handleUpdateUserByIds} />
-      <Button title="Set One" onPress={handleSetOne} />
-      <Button title="Set Many" onPress={handleSetMany} />
-      <Button title="Set All" onPress={handleSetAll} />
-      <Button title="Remove All" onPress={handleRemoveAll} />
-      <Button title="Upsert User" onPress={handleUpsertUser} />
-      <Button title="Upsert Many" onPress={handleUpsertMany} /> */}
     </View>
   );
 };
